@@ -8,8 +8,8 @@ const FOCUS_MAP = {
 
 import { GoogleGenAI } from "@google/genai";
 
-// The client gets the API key from the environment variable `GEMINI_API_KEY`.
-const ai = new GoogleGenAI({ apiKey: "AIzaSyDmYz13Aj9DDKsUhOAsF6PIStZAqTpiVSw" });
+// The client gets the API key from the environment variable `VITE_GEMINI_API_KEY`.
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
 
 export async function main(code, language, focus) {
   const response = await ai.models.generateContent({
