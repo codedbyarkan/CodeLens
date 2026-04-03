@@ -1,0 +1,150 @@
+.apiRow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  animation: fadeUp 0.6s 0.1s ease both;
+}
+
+.glassInput {
+  flex: 1;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-primary);
+  outline: none;
+  backdrop-filter: blur(16px);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.glassInput::placeholder {
+  color: var(--text-muted);
+}
+
+.glassInput:focus {
+  border-color: rgba(0, 240, 255, 0.4);
+  box-shadow: 0 0 0 3px rgba(0, 240, 255, 0.08),
+              inset 0 0 0 1px rgba(0, 240, 255, 0.1);
+}
+
+.keyBadge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+
+.keyBadgeSet {
+  background: rgba(34, 211, 160, 0.12);
+  border: 1px solid rgba(34, 211, 160, 0.3);
+  color: var(--accent-green);
+}
+
+.keyBadgeNone {
+  background: rgba(244, 63, 138, 0.1);
+  border: 1px solid rgba(244, 63, 138, 0.25);
+  color: var(--accent-pink);
+}
+
+/* ── Toolbar row ── */
+.toolbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  animation: fadeUp 0.6s 0.15s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.glassSelect {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  border-right-width: 5px;
+  padding: 9px 14px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  outline: none;
+  cursor: pointer;
+  backdrop-filter: blur(16px);
+  transition: border-color 0.2s;
+}
+
+.glassSelect:focus {
+  border-color: rgba(168, 85, 247, 0.5);
+}
+
+.glassSelect option {
+  background: #151c30;
+}
+
+/* ── Buttons ── */
+.btn {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 9px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--glass-border);
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(16px);
+}
+
+.btnGhost {
+  background: var(--glass-bg);
+  color: var(--text-secondary);
+}
+
+.btnGhost:hover {
+  background: var(--glass-hover);
+  color: var(--text-primary);
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(168, 85, 247, 0.2));
+  border-color: rgba(0, 240, 255, 0.35);
+  color: var(--accent-cyan);
+  position: relative;
+  overflow: hidden;
+}
+
+.btnPrimary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(168, 85, 247, 0.15));
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.btnPrimary:hover::before {
+  opacity: 1;
+}
+
+.btnPrimary:hover {
+  box-shadow: 0 0 24px rgba(0, 240, 255, 0.25);
+  border-color: rgba(0, 240, 255, 0.6);
+}
+
+.btnPrimary:active {
+  transform: scale(0.97);
+}
+
+.btnPrimary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
